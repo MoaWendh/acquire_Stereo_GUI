@@ -43,6 +43,6 @@ msg= sprintf('As imagens serão salvas em:\n %s \n %s', handles.param.pathToSave
 handles.editMsgs.String= msg;
 
 % Cria flag para sinalizar que os paths foram criados:
-handles.pathsGerados= 1;
+handles.pathsDefinidos= 1;
 
 end

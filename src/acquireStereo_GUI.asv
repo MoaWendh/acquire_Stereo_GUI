@@ -116,18 +116,14 @@ if (handles.camObj(1).DeviceID)
     handles.pbTesteCapturaImages.Enable= 'on';
 
     handles.pbFechaCameras.Enable= 'on';
-    
-    handles.pbPreviewParEstereo.Enable= 'on';    
 else
-    handles.staticStatusCamerasOpen.ForegroundColor= [1.0, 0.0, 0.0];
+    handles.staticStatusCamerasOpen.BackgroudColor= [1.0, 0.0, 0.0];
     handles.staticStatusCamerasOpen.String= 'Câmeras fechadas';
     
     handles.pbShowParamCams.Enable= 'off';
     handles.pbTesteCapturaImages.Enable= 'off';
     
     handles.pbFechaCameras.Enable= 'off';
-    
-    handles.pbPreviewParEstereo.Enable= 'on';
 end
     
 % Efetua a leitura dos parãmetros das câmeras:
@@ -188,7 +184,7 @@ else
     msg= sprintf(' Problemas ao ler arquivos de parâmetros.\n Verifique se o arquivo não está corrompido!');
     msgbox(msg, 'Atenção!', 'warn');
     
-    handles.staticStatusArqLido.ForegroundColor= [1.0, 0.0, 0.0];
+    handles.staticStatusArqLido.BackgroudColor= [1.0, 0.0, 0.0];
     handles.staticStatusArqLido.String= 'Arquivo não lido';
     
     handles.pbExibeParamFiles.Enable= 'off';
@@ -401,7 +397,7 @@ if (handles.camObj(1).DeviceID || handles.camObj(2).DeviceID)
     delete(handles.camObj(1)); % Deleta o objeto aberto.
     delete(handles.camObj(2)); % Deleta o objeto aberto.
     
-    handles.staticStatusCamerasOpen.ForegroundColor= [1.0, 0.0, 0.0];
+    handles.staticStatusCamerasOpen.BackgroudColor= [1.0, 0.0, 0.0];
     handles.staticStatusCamerasOpen.String= 'Câmeras fechadas';
     handles.editMsgs.String= 'Câmeras fechadas';
     handles.camObjStarted= 0;

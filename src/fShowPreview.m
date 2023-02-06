@@ -8,15 +8,15 @@ function fshowPreview(handles)
     hImageCam1= image(zeros(2048,2048));
     
     % Abre o preview da câmera 1:
-    obj1 = videoinput("pointgrey",1);
-    preview(obj1, hImageCam1); 
+    %obj1 = videoinput("pointgrey",1);
+    preview(handles.camObj(1), hImageCam1); 
 
     subplot(1,2,2);   
     hImageCam2= image(zeros(2048,2048));
     
     % Abre o preview da câmera 2:
-    obj2 = videoinput("pointgrey",2);
-    preview(obj2, hImageCam2); 
+    % obj2 = videoinput("pointgrey",2);
+    preview(handles.camObj(2), hImageCam2); 
     
     % Abre uma caixa de diálogo solictando para fechar o preview:
     dlg= dialog('Position',[600 50 400 150],'Name','Preview estéreo');
@@ -30,9 +30,8 @@ function fshowPreview(handles)
     uiwait(dlg);
               
     % Fecha o preview:
-    stoppreview(obj1);
-    stoppreview(obj2);
-    delete(obj1);
-    delete(obj2);
+    stoppreview(handles.camObj(1));
+    stoppreview(handles.camObj(2));
+    
     close all;
 end
